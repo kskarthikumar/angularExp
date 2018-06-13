@@ -1,0 +1,18 @@
+<section class="headlineWrap">
+    <h2>Headlines in city</h2>
+    <table>
+      <tr>
+        <td [align]="center">test</td>
+      </tr>
+    </table>
+    <section class="newsList" *ngFor = "let headlines of headlinesArray">
+      <img src="../assets/{{headlines.image}}" [alt]="img" />
+      <p class="date">{{headlines.date}}</p>
+      <h1 class="title">{{headlines.title}}</h1>
+      <article appNewsDesc>{{headlines.desc}}</article>
+      <span class="like" (click)="likeCount($event.target.innerText)">Like<span class="batch">0</span></span>
+      <span class="author" [attr.colspan]="2">{{headlines.author}}</span>
+    </section>
+</section>
+
+

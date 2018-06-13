@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+.mainTitle {
+    background: rgba(0 ,0 ,0 , .9);
+    display: inline-block;
+    padding: 20px 80px;
+    color: #00ffff;
+}
+nav {
+    padding: 80px 40px 40px 40px;
+}
+nav a {
+    padding: 0 30px;
+}

@@ -1,0 +1,158 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+}
+body, html {
+    background: #232323;
+    font-family: Gugi;
+    color: #fff;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+section.mainCont {
+    background: #000;
+    border: 20px solid #141415;
+    padding: 30px;
+    width: 80%;
+    font-family: 'Arvo', serif;
+    display: inline-block;
+    margin-bottom: 100px;
+    font-family: 'Abel', sans-serif;
+}
+.mainCont p {
+    line-height: 30px;
+}
+.mainCont h1 {
+    padding-bottom: 40px;
+}
+.container {
+    text-align: center;
+}
+section.newsList {
+    border: 10px solid #242424;
+    margin: 40px 0;
+    padding: 150px 20px 20px 20px;
+    display: inline-block;
+    background: #000;
+    width: 23%;
+    position: relative;
+    font-family: 'Abel', sans-serif;
+}
+p.date {
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    font-family: serif;
+}
+h1.title {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+span.author {
+    float: right;
+    font-size: 12px;
+    font-family: serif;
+}
+h1.title:after {
+    content: "";
+    width: 40%;
+    height: 2px;
+    background: #00ffff;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: 0 auto;
+    position: absolute;
+}
+.newsList img {
+    position: absolute;
+    top: -20%;
+    width: 90%;
+    left: 5%;
+}
+nav > a.active {
+    color: #00ffff;
+}
+span.like {
+    font-size: 12px;
+    font-family: sans-serif;
+    float: left;
+    cursor: pointer;
+    position: relative;
+}
+span.batch {
+    position: absolute;
+    padding-top: 7px;
+    padding-right: 1px;
+    background: #82B440;
+    color: #fff;
+    border-radius: 50%;
+    left: 115%;
+    width: 27px;
+    height: 27px;
+    top: -6px;
+    text-align: center;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+.loginTab {
+    float: right;
+    width: 100%;
+    text-align: right;
+    margin-top: -90px;
+    font-size: 12px;
+}
+.loginTab a {
+    padding: 0 10px;
+    margin-left: 5px;
+    position: relative;
+}
+.loginTab ul {
+    float: right;
+}
+.loginTab li {
+    position: relative;
+    float: left;
+    list-style: none;
+}
+.loginTab li span {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background: rgba(0 ,0 ,0 , .9);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+.loginTab li span input {
+    margin-bottom: 10px;
+    float: left;
+    border: none;
+    background: #b1b1b1;
+    height: auto;
+    width: 240px;
+    padding: 10px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #fff;
+}
+.loginTab li span input:last-of-type {margin-bottom: 0; cursor: pointer; background: #82B440;}
+.loginTab a.active:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: -70%;
+    left: 40%;
+}

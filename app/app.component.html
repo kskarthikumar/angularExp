@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="bg">
+    <header>
+      <div class="mainTitle"><a href="/">Hello World!</a></div>
+      <div class="loginTab">
+          <ul *ngIf="userNotLoggedId">
+              <li> 
+                <a [ngClass]="loginPopVal ? 'active' : ''" id="login" (click)="loginPopUp($event, 'onclick')" href="javascript:void(0)">Login</a>
+                <span *ngIf="loginPopVal">
+                  <form #loginData = "ngForm" (ngSubmit)="doLogin(loginData.value)" name="loginForm">
+                      <input type="text" placeholder="Enter username" name="lname" ngModel/>
+                      <input type="text" placeholder="Enter password" name="pwd" ngModel/>
+                      <input type="submit" value="Submit"/>
+                  </form>
+                </span>
+              </li>
+              <li> 
+                <a [ngClass]="regPopVal ? 'active' : ''" id="register"(click)="regPopUp($event)" href="javascript:void(0)">Register</a>
+                <span *ngIf="regPopVal">
+                    <form  #registerData = "ngForm" (ngSubmit)="doRegister(registerData.value)" name="RegForm">
+                        <input type="text" placeholder="Enter username" name="lname" ngModel/>
+                        <input type="text" placeholder="Enter password" name="pwd" ngModel/>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                  </span>
+              </li>
+          </ul>  
+          <ul *ngIf="userLoggedId">
+            <li>Welcome {{loggedInUserName}}!</li>
+          </ul>     
+      </div>
+      <nav>
+        <a routerLink="/headlines" routerLinkActive="active">Headlines</a>
+        <a routerLink="/sports" routerLinkActive="active">Sports</a>
+      </nav>
+    </header>
+    
+    <router-outlet></router-outlet>
+
+</div>

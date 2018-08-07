@@ -8,6 +8,8 @@ import { SportsComponent }     from './sports.component';
 import {DefaultPageComponent} from './default-page.component';
 import { NewsDescDirective } from './news-desc.directive';
 import { TagServiceService } from './tag-service.service';
+import { UserService } from './User.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: 'headlines', component: HeadlinesComponent },
@@ -25,13 +27,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [TagServiceService],
+  providers: [TagServiceService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

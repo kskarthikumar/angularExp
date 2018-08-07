@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './User.service';
+import { User } from './User';
 
 @Component({
   template: `
-  <div *ngIf='sports?.length > 0; then sportsNews else noContent'></div>
+<div *ngIf='myObj?.length > 0; then sportsNews else noContent'></div>
   <ng-template #sportsNews>
   <section class="sportsWrap">
-  <h2>sports in city</h2>
-  <section class="newsList" *ngFor = "let sports of sportsNews">
-    <img src="../assets/{{sports.image}}" alt="img" />
+  <section class="newsList" *ngFor = "let sports of myObj">
+    <img src="{{sports.image}}" alt="img" />
     <p class="date">{{sports.date}}</p>
     <h1 class="title">{{sports.title}}</h1>
     <article class="desc">{{sports.desc}}</article>
@@ -24,7 +25,19 @@ import { Component } from '@angular/core';
     </ng-template>
   `
 })
-export class SportsComponent {
-  sports: any[] = [];
+export class SportsComponent implements OnInit {
 
- }
+  myObj:object;
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit() {
+    this.userService
+      .getUsers()
+      .subscribe((data) => {
+        this.myObj = data;
+          console.log('data is '+this.myObj);
+        });
+  }
+
+}

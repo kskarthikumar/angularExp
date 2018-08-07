@@ -16,7 +16,9 @@ export class AppComponent {
 
   ngOnInit() {
     let nameFrmStorage:object = JSON.parse(localStorage.getItem(this.loginData));
-    this.doLogin(nameFrmStorage, 'pageLoad');
+    if(nameFrmStorage!= null){
+      this.doLogin(nameFrmStorage, 'pageLoad');
+    }
   }
 
   lname:string = '';
@@ -36,9 +38,11 @@ export class AppComponent {
     this.regPopVal = !this.regPopVal;
   }
 
-  doRegister(val) {
-    console.log(val.lname);
-    console.log(val.pwd);
+  doRegister(fval) {
+    console.log(fval.value);
+    let val = fval.value;
+    console.log(val);
+    console.log(val.lname, val.pwd);
     let loginObj = {lname: val.lname, pwd: val.pwd};
     localStorage.setItem(this.loginData, JSON.stringify(loginObj));
     alert('Register successfully');
@@ -47,6 +51,7 @@ export class AppComponent {
   }
 
   doLogin(val, mode) {
+    val= val.value;
     let nameFrmStorage:object = JSON.parse(localStorage.getItem(this.loginData));
     console.log(nameFrmStorage);
     if (nameFrmStorage != null){

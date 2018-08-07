@@ -7,17 +7,17 @@
               <li> 
                 <a [ngClass]="loginPopVal ? 'active' : ''" id="login" (click)="loginPopUp($event, 'onclick')" href="javascript:void(0)">Login</a>
                 <span *ngIf="loginPopVal">
-                  <form #loginData = "ngForm" (ngSubmit)="doLogin(loginData.value)" name="loginForm">
-                      <input type="text" placeholder="Enter username" name="lname" ngModel/>
-                      <input type="text" placeholder="Enter password" name="pwd" ngModel/>
+                  <form #loginData="ngForm" (ngSubmit)="doLogin(loginData)" name="loginForm">
+                      <input type="text" placeholder="Enter username" name="lname" ngModel #lname="ngModel"/>
+                      <input type="text" placeholder="Enter password" name="pwd" ngModel #pwd="ngModel"/>
                       <input type="submit" value="Submit"/>
                   </form>
                 </span>
               </li>
-              <li> 
+              <li>
                 <a [ngClass]="regPopVal ? 'active' : ''" id="register"(click)="regPopUp($event)" href="javascript:void(0)">Register</a>
                 <span *ngIf="regPopVal">
-                    <form  #registerData = "ngForm" (ngSubmit)="doRegister(registerData.value)" name="RegForm">
+                    <form  #registerData="ngForm" (ngSubmit)="doRegister(registerData)" name="RegForm">
                         <input type="text" placeholder="Enter username" name="lname" ngModel/>
                         <input type="text" placeholder="Enter password" name="pwd" ngModel/>
                         <input type="submit" value="Submit"/>

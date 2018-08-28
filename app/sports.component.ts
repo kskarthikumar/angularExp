@@ -23,21 +23,30 @@ import { User } from './User';
     <br>
     <p>No news to display!!</p>
     </ng-template>
+    <div id="loader" [hidden]="toggleLoader">Loading...</div>
   `
 })
 export class SportsComponent implements OnInit {
 
   myObj:object;
-
+  toggleLoader:boolean = false;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService
       .getUsers()
-      .subscribe((data) => {
-        this.myObj = data;
-          console.log('data is '+this.myObj);
-        });
+      .subscribe(
+        (data) => {
+          if(data != '' && data != null){
+            this.toggleLoader = true;
+            this.myObj = data;
+            console.log('data --> ', this.myObj);
+          }
+       
+        },
+        (error) => {
+          console.log('Error happened--->', error.message);
+        })
   }
 
 }
